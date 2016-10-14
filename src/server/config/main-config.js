@@ -13,7 +13,7 @@
 
   // *** view folders *** //
   const viewFolders = [
-    path.join(__dirname, '..', 'views')
+    path.join(__dirname, 'src/server/views')
   ];
 
   // *** load environment variables *** //
