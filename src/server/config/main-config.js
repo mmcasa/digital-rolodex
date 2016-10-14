@@ -9,7 +9,7 @@
   const session = require('express-session');
   const flash = require('connect-flash');
   const morgan = require('morgan');
-  const nunjucks = require('nunjucks');
+  const ejs = require('ejs');
 
   // *** view folders *** //
   const viewFolders = [
@@ -22,11 +22,7 @@
   appConfig.init = function(app, express) {
 
     // *** view engine *** //
-    nunjucks.configure(viewFolders, {
-      express: app,
-      autoescape: true
-    });
-    app.set('view engine', 'html');
+    app.set('view engine', 'ejs');
 
     // *** app middleware *** //
     if (process.env.NODE_ENV !== 'test') {
@@ -35,12 +31,12 @@
     app.use(cookieParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-    // // uncomment if using express-session
-    // app.use(session({
-    //   secret: process.env.SECRET_KEY,
-    //   resave: false,
-    //   saveUninitialized: true
-    // }));
+    // uncomment if using express-session
+    app.use(session({
+      secret: process.env.SECRET_KEY,
+      resave: false,
+      saveUninitialized: true
+    }));
     app.use(flash());
     app.use(express.static(path.join(__dirname, '..', '..', 'client')));
 
