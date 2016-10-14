@@ -7,43 +7,113 @@ chai.use(chaiHttp);
 
 const server = require('../../src/server/app');
 
-describe('routes : index', () => {
+describe('****PAGES****', () => {
 
-  beforeEach((done) => {
-    done();
-  });
+    describe('Sign Up Page', () => {
 
-  afterEach((done) => {
-    done();
-  });
+        it('should exist', (done) => {
+            done();
+        });
 
-  describe('GET /', () => {
-    it('should render the index', (done) => {
-      chai.request(server)
-      .get('/')
-      .end((err, res) => {
-        res.redirects.length.should.equal(0);
-        res.status.should.equal(200);
-        res.type.should.equal('text/html');
-        res.text.should.contain('<h1>Welcome to Express!</h1>');
-        res.text.should.contain('<h2>The sum is 3</h2>');
-        done();
-      });
+        it('shows info about service', (done) => {
+            done();
+        });
+
+        it('takes in email', (done) => {
+            done();
+        });
+
+        it('takes in password', (done) => {
+            done();
+        });
+
     });
-  });
 
-  describe('GET /404', () => {
-    it('should throw an error', (done) => {
-      chai.request(server)
-      .get('/404')
-      .end((err, res) => {
-        res.redirects.length.should.equal(0);
-        res.status.should.equal(404);
-        res.type.should.equal('application/json');
-        res.body.message.should.eql('Not Found');
-        done();
-      });
+    describe('Log In Page', () => {
+
     });
-  });
+
+    describe('Dashboard Page', () => {
+
+        it('should exist', (done) => {
+            done();
+        });
+
+        it('displays with upload image button', (done) => {
+            done();
+        });
+
+        it('shows icons of their current contacts', (done) => {
+            done();
+        });
+
+        it('has a search bar', (done) => {
+            done();
+        });
+
+        it('search and filter are operational', (done) => {
+            done();
+        });
+
+        describe('REDIRECTS', () => {
+            it('when you click on upload image should go to upload image page', (done) => {
+                done();
+            });
+
+            it('when you click on a contact it goes to render page with contacts info  ', (done) => {
+                done();
+            });
+
+        });
+
+    });
+
+    describe('Upload Image Page', () => {
+        it('should exist', (done) => {
+            done();
+        });
+
+        it('should be pre-populated', (done) => {
+            done();
+        });
+
+        it('should have first and last name', (done) => {
+            done();
+        });
+
+        it('should show where they work', (done) => {
+            done();
+        });
+
+        it('should show job title', (done) => {
+            done();
+        });
+
+        it('should show contact info', (done) => {
+            done();
+        });
+
+        it('should recommend FB, twitter and linked in pages', (done) => {
+            done();
+        });
+
+        it('should have a field that the user can put in comments', (done) => {
+            done();
+        });
+
+        it('should have tag fields to filter through their rolodex', (done) => {
+            done();
+        });
+
+        describe('REDIRECTS', () => {
+
+            it('when user clicks save it should redirect to rolodex showing new contact', (done) => {
+                done();
+            });
+
+        });
+
+
+    });
 
 });
