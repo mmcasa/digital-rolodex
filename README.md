@@ -6,6 +6,8 @@ an web/mobile interface where someone can upload an image of a business card and
 1. npm install
 2. copy this code in terminal
 
+Jeannie
+
 ```
 bash -c 'echo "SESSION_SECRET="$(openssl rand -hex 64)' >> .env
 ```
