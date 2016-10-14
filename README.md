@@ -11,3 +11,4 @@ bash -c 'echo "SESSION_SECRET="$(openssl rand -hex 64)' >> .env
 ```
 
 # Add Authors
+Taylor King (a.k.a. Steve Jobs)
