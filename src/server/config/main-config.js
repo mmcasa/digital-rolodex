@@ -33,7 +33,7 @@
     app.use(bodyParser.urlencoded({ extended: false }));
     // uncomment if using express-session
     app.use(session({
-      secret: process.env.SECRET_KEY,
+      secret: process.env.SESSION_SECRET,
       resave: false,
       saveUninitialized: true
     }));
