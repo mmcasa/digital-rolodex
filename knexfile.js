@@ -3,7 +3,7 @@ const databaseName = 'digital_rolodex';
 module.exports = {
   development: {
     client: 'postgresql',
-    connection: `postgres://localhost:5432/${databaseName}`,
+    connection: `postgres://localhost:5432/${databaseName}_dev`,
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     },
@@ -23,7 +23,7 @@ module.exports = {
   },
   production: {
     client: 'postgresql',
-    connection: `postgres://localhost:5432/${databaseName}_test`,
+    connection: `postgres://localhost:5432/${databaseName}`,
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     },
