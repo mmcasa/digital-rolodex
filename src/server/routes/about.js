@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const indexController = require('../controllers/index');
 
-router.get('/', function (req, res, next) {
-  res.redirect('/login');
+// create a controller if you need functions in here
+// const [page]Controller = require('../controllers/[page]');
+
+router.get('/about', function (req, res, next) {
+  // route code here
+  res.render('about');
 });
 
 module.exports = router;

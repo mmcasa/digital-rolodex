@@ -3,8 +3,8 @@ const router = express.Router();
 
 const indexController = require('../controllers/index');
 
-router.get('/login', function (req, res, next) {
-  res.render('login');
+router.get('/', function (req, res, next) {
+  res.redirect('/login');
 });
 
 module.exports = router;
