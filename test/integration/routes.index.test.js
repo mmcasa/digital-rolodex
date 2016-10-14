@@ -28,12 +28,23 @@ describe('****PAGES****', () => {
         });
 
         it('takes in first name/last name', (done) => {
-
+          done();
         });
 
     });
 
     describe('Log In Page', () => {
+      it('should have a form that takes in an email', (done) => {
+        done();
+      });
+
+      it('should have a form that takes in an password', (done) => {
+        done();
+      });
+
+      it('password should be hidden', (done) => {
+        done();
+      });
 
     });
 
@@ -48,7 +59,7 @@ describe('****PAGES****', () => {
         });
 
         it('displays button to display own user account', (done) => {
-
+          done();
         });
 
         it('shows icons of their current contacts', (done) => {
@@ -86,7 +97,7 @@ describe('****PAGES****', () => {
         });
 
         it('if no card given should have form to add own info', (done) => {
-
+          done();
         });
 
         it('should have first and last name', (done) => {
@@ -129,23 +140,23 @@ describe('****PAGES****', () => {
 
     describe('Contact Info Page', () => {
       it('should exist', (done) => {
-
+        done();
       });
 
       it('shows only connected social media apps', (done) => {
-
+        done();
       });
 
       it('have a button to see original image', (done) => {
-
+        done();
       });
 
       it('should have option to edit', (done) => {
-
+        done();
       });
 
       it('should hide contact', (done) => {
-
+        done();
       });
 
       describe('REDIRECTS', () => {
