@@ -18,6 +18,7 @@
     app.use(index);
     app.use(login);
     app.use(signup);
+    app.use(users);
 
   };
 
