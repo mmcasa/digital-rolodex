@@ -1,21 +1,12 @@
-{% extends '_base.html' %}
-
-{% block title %}{% endblock %}
 
 
-{% block content %}
+<%- include src/server/views/partials/_base.html %>
 
   <div class="row">
     <div class="col-md-12">
       <div>
-        {% if message %}
-          <h1>{{message}}</h1>
-        {% endif %}
-        {% if error.status %}
-          <h2>{{error.status}}</h2>
-        {% endif %}
+          <h1><%=message %></h1>
+          <h2><%=error.status %></h2>
       </div>
     </div>
   </div>
-
-{% endblock %}
