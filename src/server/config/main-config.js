@@ -11,11 +11,6 @@
   const morgan = require('morgan');
   const ejs = require('ejs');
 
-  // *** view folders *** //
-  const viewFolders = [
-    path.join(__dirname, 'src/server/views')
-  ];
-
   // *** load environment variables *** //
   require('dotenv').config();
 
@@ -23,6 +18,7 @@
 
     // *** view engine *** //
     app.set('view engine', 'ejs');
+    app.set('views', (path.join(__dirname, '..', 'views')))
 
     // *** app middleware *** //
     if (process.env.NODE_ENV !== 'test') {
