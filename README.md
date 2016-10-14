@@ -22,6 +22,6 @@ bash -c 'echo "SESSION_SECRET="$(openssl rand -hex 64)' >> .env
 7. fix conflicts
 
 # Add Authors
-
+Taylor King (a.k.a. Steve Jobs)
 Joey
 Tim
