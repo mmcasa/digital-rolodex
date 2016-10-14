@@ -33,3 +33,5 @@ Taylor King (a.k.a. Steve Jobs)
 Malik Villarreal
 Joey
 Tim
+Jeannie
+Tosin
