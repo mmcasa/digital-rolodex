@@ -27,6 +27,10 @@ describe('****PAGES****', () => {
             done();
         });
 
+        it('takes in first name/last name', (done) => {
+
+        });
+
     });
 
     describe('Log In Page', () => {
@@ -41,6 +45,10 @@ describe('****PAGES****', () => {
 
         it('displays with upload image button', (done) => {
             done();
+        });
+
+        it('displays button to display own user account', (done) => {
+
         });
 
         it('shows icons of their current contacts', (done) => {
@@ -73,8 +81,12 @@ describe('****PAGES****', () => {
             done();
         });
 
-        it('should be pre-populated', (done) => {
+        it('should be pre-populated if routed from image uploaded', (done) => {
             done();
+        });
+
+        it('if no card given should have form to add own info', (done) => {
+
         });
 
         it('should have first and last name', (done) => {
@@ -93,7 +105,7 @@ describe('****PAGES****', () => {
             done();
         });
 
-        it('should recommend FB, twitter and linked in pages', (done) => {
+        it('should recommend twitter and linked in pages', (done) => {
             done();
         });
 
@@ -107,12 +119,42 @@ describe('****PAGES****', () => {
 
         describe('REDIRECTS', () => {
 
-            it('when user clicks save it should redirect to rolodex showing new contact', (done) => {
+            it('when user clicks save it should redirect to rolodex showing new contact highlighted', (done) => {
                 done();
             });
 
         });
 
+    });
+
+    describe('Contact Info Page', () => {
+      it('should exist', (done) => {
+
+      });
+
+      it('shows only connected social media apps', (done) => {
+
+      });
+
+      it('have a button to see original image', (done) => {
+
+      });
+
+      it('should have option to edit', (done) => {
+
+      });
+
+      it('should hide contact', (done) => {
+
+      });
+
+      describe('REDIRECTS', () => {
+
+          it('should go back to image page that prepopopulates info', (done) => {
+              done();
+          });
+
+      });
 
     });
 
