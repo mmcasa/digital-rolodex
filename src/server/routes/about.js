@@ -6,7 +6,7 @@ const router = express.Router();
 // const [page]Controller = require('../controllers/[page]');
 
 router.get('/about', function (req, res, next) {
-  // route code here
+  // render about page, should send logged in user info
   res.render('about');
 });
 
