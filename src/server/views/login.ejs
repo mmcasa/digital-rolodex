@@ -1,0 +1,15 @@
+<%- include partials/head.ejs %>
+
+<!-- html code goes here <body></body> is in the partials along with all the css semantic ui and js-->
+
+<h1>This is the Login Page</h1>
+
+<fieldset>
+  <form class="login-form" action="/token" method="post">
+    <input type="text" name="email" placeholder="Email" value="">
+    <input type="password" name="password" placeholder="Password" value="">
+    <input type="submit" name="name" value="Login">
+  </form>
+</fieldset>
+
+<%- include partials/foot.ejs %>
