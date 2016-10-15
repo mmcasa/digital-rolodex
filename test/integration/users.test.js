@@ -44,7 +44,7 @@ describe('THE USER PAGES TEST SUITE', () => {
             it('should show a toolbar for tags', (done) => {
                 chai.request(server)
                     .get('/users/1')
-                    .end((err, res) => {
+te                    .end((err, res) => {
                         done();
                     });
 

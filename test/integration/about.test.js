@@ -18,7 +18,7 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
                 .get('/about')
                 .end((err, res) => {
                     done();
-                });
+                 });
         });
 
         it('should have information about the service', (done) => {
