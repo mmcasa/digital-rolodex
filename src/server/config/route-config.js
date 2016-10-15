@@ -28,7 +28,9 @@
     app.use(users);
     app.use('/users/:user', companies);
     app.use('/users/:user', newcontact);
+    // default tags
     app.use('/users/:user', dtags);
+    // user-created tags
     app.use('/users/:user', utags);
     app.use('/users/:user/companies/:company', contacts);
 
