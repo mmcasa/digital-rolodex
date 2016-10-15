@@ -33,7 +33,7 @@ router.post('/contacts', function (req, res, next) {
 
 router.post('/contacts/img', upload.single('image'), function (req, res, next) {
   knex('images').insert({image: req.file.buffer}).then(function () {
-    res.redirect('back');
+    res.send('added');
   });
   // route to handle image upload and parsing
   next();
