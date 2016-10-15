@@ -18,6 +18,7 @@ describe('THE USER PAGES TEST SUITE', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                        res.status.should.equal(200);
                         done();
                     });
 
@@ -27,6 +28,8 @@ describe('THE USER PAGES TEST SUITE', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                        res.text.should.include("href='/user/1/contacts/new'");
+                        res.text.should.include('Add New Contact');
                         done();
                     });
 
@@ -36,6 +39,7 @@ describe('THE USER PAGES TEST SUITE', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                        res.text.should.include('Conc')
                         done();
                     });
 
@@ -45,6 +49,8 @@ describe('THE USER PAGES TEST SUITE', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                      res.text.should.include('CEO');
+                      res.text.should.include('Founder');
                         done();
                     });
 
@@ -54,6 +60,8 @@ describe('THE USER PAGES TEST SUITE', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                      res.text.should.include('User Created Tag 1');
+                      res.text.should.include('User Created Tag 2');
                         done();
                     });
 
@@ -164,6 +172,7 @@ describe('***AUTH***', () => {
                 chai.request(server)
                     .get('/users/1')
                     .end((err, res) => {
+                      res.status.should.equal(200);
                         done();
                     });
 
@@ -179,6 +188,7 @@ describe('***AUTH***', () => {
                 chai.request(server)
                     .get('/users/1/account')
                     .end((err, res) => {
+                      res.status.should.equal(200);
                         done();
                     });
 
@@ -194,6 +204,7 @@ describe('***AUTH***', () => {
                 chai.request(server)
                     .get('/users/1/edit')
                     .end((err, res) => {
+                      res.status.should.equal(200);
                         done();
                     });
 
@@ -209,6 +220,7 @@ describe('***AUTH***', () => {
                 chai.request(server)
                     .get('/users/1/delete')
                     .end((err, res) => {
+                      res.status.should.equal(200);
                         done();
                     });
 
@@ -224,8 +236,9 @@ describe('***AUTH***', () => {
 
             it('should redirect to login page with error', (done) => {
                 chai.request(server)
-                    .get('/users/1')
+                    .get('/users/2')
                     .end((err, res) => {
+                      res.status.should.equal(500);
                         done();
                     });
 
@@ -237,8 +250,9 @@ describe('***AUTH***', () => {
 
             it('should redirect to login page with error', (done) => {
                 chai.request(server)
-                    .get('/users/1/account')
+                    .get('/users/2/account')
                     .end((err, res) => {
+                      res.status.should.equal(500);
                         done();
                     });
 
@@ -250,8 +264,9 @@ describe('***AUTH***', () => {
 
             it('should redirect to login page with error ', (done) => {
                 chai.request(server)
-                    .get('/users/1/edit')
+                    .get('/users/2/edit')
                     .end((err, res) => {
+                      res.status.should.equal(500);
                         done();
                     });
 
@@ -263,8 +278,9 @@ describe('***AUTH***', () => {
 
             it('should redirect to login page with error', (done) => {
                 chai.request(server)
-                    .get('/users/1/delete')
+                    .get('/users/2/delete')
                     .end((err, res) => {
+                      res.status.should.equal(500);
                         done();
                     });
 
@@ -282,6 +298,10 @@ describe('***AUTH***', () => {
             chai.request(server)
                 .get('/users/1')
                 .end((err, res) => {
+                  res.text.should.include('Name');
+                  res.text.should.include('Email');
+                  res.text.should.include('linkedIn');
+                  res.text.should.include('Twitter');
                     done();
                 });
 
@@ -325,11 +345,11 @@ describe('***AUTH***', () => {
                 });
 
                 it('should have filter and search bars', (done) => {
-                  chai.request(server)
-                   .get('/users/1')
-                   .end((err, res) => {
-                   done();
-                   });
+                    chai.request(server)
+                        .get('/users/1')
+                        .end((err, res) => {
+                            done();
+                        });
 
                 });
 
@@ -337,9 +357,9 @@ describe('***AUTH***', () => {
 
             describe('ACCOUNT PAGE', () => {
 
-              it('description', (done) => {
+                it('description', (done) => {
 
-              });
+                });
 
             });
 

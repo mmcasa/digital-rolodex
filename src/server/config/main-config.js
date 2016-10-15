@@ -11,6 +11,7 @@
   const morgan = require('morgan');
   const ejs = require('ejs');
   const bcrypt = require('bcrypt-as-promised');
+  const knex = require('../db/connection.js');
 
   // *** load environment variables *** //
   require('dotenv').config();
