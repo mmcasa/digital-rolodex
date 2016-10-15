@@ -12,7 +12,7 @@ router.get('/users', function (req, res, next) {
 
 router.get('/users/:user', function (req, res, next) {
   // dashboard
-  res.render('dashboard');
+  res.render('users/dashboard');
 });
 
 router.get('/users/:user/account', function (req, res, next) {
@@ -30,9 +30,8 @@ router.get('/users/:user/delete', function (req, res, next) {
   res.render('users/delete');
 });
 
-//This is an authentication route
 router.post('/users', function (req, res, next) {
-  // add to users table
+  // add to users table from signup
   res.redirect('/users/:user');
 });
 
