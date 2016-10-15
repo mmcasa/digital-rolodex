@@ -21,7 +21,8 @@ router.get('/contacts/new', function (req, res, next) {
   // will need to have a upload photo section that inserts to database then sends photo to google vision and retrieves data which then has to be returned to the form on the page correctly
   knex('users').then(function (data) {
     console.log(data);
-    res.render('contacts/new');
+    res.send(data);
+    // res.render('contacts/new');
   })
 
 });
