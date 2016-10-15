@@ -22,6 +22,7 @@ router.get('/users/:user/account', function (req, res, next) {
 
 router.get('/users/:user/edit', function (req, res, next) {
   // edit user profile information
+  // make sure to pass to the view the info from contact so the forms are full
   res.render('users/edit');
 });
 
