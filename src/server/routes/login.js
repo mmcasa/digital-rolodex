@@ -6,8 +6,13 @@ const router = express.Router();
 // const [page]Controller = require('../controllers/[page]');
 
 router.get('/login', function (req, res, next) {
-  // route code here
+  // login form
   res.render('login');
+});
+
+router.post('/token', function (req, res, next) {
+  // start session
+  res.render('/users/:user');
 });
 
 module.exports = router;

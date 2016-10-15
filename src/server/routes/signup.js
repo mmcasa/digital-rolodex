@@ -6,8 +6,13 @@ const router = express.Router();
 // const [page]Controller = require('../controllers/[page]');
 
 router.get('/signup', function (req, res, next) {
-  // route code here
+  // sign up form
   res.render('signup');
+});
+
+router.post('/users', function (req, res, next) {
+  // add to users table
+  res.redirect('/users/:user');
 });
 
 module.exports = router;
