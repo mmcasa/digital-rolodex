@@ -54,20 +54,28 @@ describe('***NAVIGATION***', () => {
 
     describe('IF LOGGED IN', () => {
 
-        it('when you log in should go login page', (done) => {
+        it('when you log in should go to dashboard of the right user', (done) => {
             // send post request with login info and it should redirect to my user page
 
-            const query = "";
+            const query = '';
 
             chai.request(server)
-             .post(`/login${query}`)
-             .end((err, res) => {
-             done();
-             });
+                .post(`/login${query}`)
+                .end((err, res) => {
+                    done();
+                });
+
 
         });
 
         it('when you log in should create session and cookie', (done) => {
+            const query = '';
+
+            chai.request(server)
+                .post(`/login${query}`)
+                .end((err, res) => {
+                    done();
+                });
 
         });
 
@@ -93,10 +101,5 @@ describe('***NAVIGATION***', () => {
 
         });
     });
-
-});
-
-// tests that things look the way they are supposed to
-describe('***VIEWS***', () => {
 
 });
