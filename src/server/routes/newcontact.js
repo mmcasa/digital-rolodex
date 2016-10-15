@@ -7,6 +7,9 @@ const router = express.Router({
   mergeParams: true
 });
 
+const multer  = require('multer');
+const upload = multer();
+
 
 // create a controller if you need functions in here
 // const [page]Controller = require('../controllers/[page]');
@@ -25,17 +28,13 @@ router.post('/contacts', function (req, res, next) {
   // takes info from company and adds it to the company table
 
 
-  vision.detectText('image.jpg', function(err, text, apiResponse) {
-    // text = [
-    //   'This was text found in the image'
-    // ]
-  });
-
-
   res.redirect('/users/:user/contacts/:contact');
 });
 
-router.post('/contacts/img', function (req, res, next) {
+router.post('/contacts/img', upload.single('image'), function (req, res, next) {
+  knex('images').insert({image: req.file.buffer}).then(function () {
+    res.redirect('back');
+  });
   // route to handle image upload and parsing
   next();
 });
