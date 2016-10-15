@@ -10,9 +10,4 @@ router.get('/signup', function (req, res, next) {
   res.render('signup');
 });
 
-router.post('/users', function (req, res, next) {
-  // add to users table
-  res.redirect('/users/:user');
-});
-
 module.exports = router;

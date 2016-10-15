@@ -5,14 +5,24 @@ const router = express.Router();
 // create a controller if you need functions in here
 // const [page]Controller = require('../controllers/[page]');
 
-router.get('/users', function (req, res, next) {
-  // redirect to dashboard
-  res.redirect('/users/:user');
+//this is the monster route it will need all the fancy forms and stuff so I made it its own route
+
+router.get('/contacts/new', function (req, res, next) {
+  // add contact form
+  // will need to have a upload photo section that inserts to database then sends photo to google vision and retrieves data which then has to be returned to the form on the page correctly
+
+  res.render('contacts/new');
 });
 
-router.get('/users/:user', function (req, res, next) {
-  // dashboard
-  res.render('dashboard');
+router.post('/contacts', function (req, res, next) {
+  // adds contact to contact table
+  // takes info from company and adds it to the company table
+  res.redirect('/users/:user/contacts/:contact');
+});
+
+router.post('/contacts/img', function (req, res, next) {
+  // route to handle image upload and parsing
+  next();
 });
 
 

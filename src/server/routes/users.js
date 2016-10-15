@@ -15,5 +15,11 @@ router.get('/users/:user', function (req, res, next) {
   res.render('dashboard');
 });
 
+//This is an authentication route
+router.post('/users', function (req, res, next) {
+  // add to users table
+  res.redirect('/users/:user');
+});
+
 
 module.exports = router;
