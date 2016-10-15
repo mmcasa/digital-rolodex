@@ -1,9 +1,16 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({
+  mergeParams: true
+});
 
 
 // create a controller if you need functions in here
 // const [page]Controller = require('../controllers/[page]');
+
+router.get('/tags/:tags', function (req, res, next) {
+  // adds user tag to created tag table
+  res.redirect('/');
+});
 
 router.get('/tags/:tags/new', function (req, res, next) {
   // adds user tag to created tag table
