@@ -10,6 +10,7 @@
   const flash = require('connect-flash');
   const morgan = require('morgan');
   const ejs = require('ejs');
+  const bcrypt = require('bcrypt');
 
   // *** load environment variables *** //
   require('dotenv').config();
