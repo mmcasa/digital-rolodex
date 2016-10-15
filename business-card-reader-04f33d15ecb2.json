@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "business-card-reader-146419",
+  "private_key_id": "04f33d15ecb2d57e49c6272b25792fdfdbd01bca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDN5LT0cfvdjh79\nlDB0k9J5rQyjAxB9nJ/JaG8UBAuLk1NPoqyeHffuVrKKCAPyo/uLayPFiXMsTCNb\nx1bph5NTZ12CVk4ZUk556EY2xxMBbCStQuZBUvlAGhYuHtQkQqn6bTSJauhtU9A+\nm7+lFqGC9EPk5X2igHQxX/dNx7pkHVpY8RWXbKdiYdOFdYkAo5wtpOlICsjpLkJI\n5qvtUDoE2DGhDIzbMqpBrB4+5/0CVXCiZWgUgbbi3upnVa9i8RZw+IugMol9ZT+X\nkybkDhWbU0Yfqjd5faan3qrQYkqFmqaLNKMEVgT79yV6ApTDuwYRGaEdK/pSd60i\nkxQ78+ZjAgMBAAECggEBAJ4KPMAZsivZSH56vkrtoLSXGUkTNBhHHfuadxDVHguQ\nFXXeN0PTWxkOYVNEXctlBdN5dObO36IT+1wageMVlweBIyzFlIMpQ2Wd3i9z1WnV\nGb4IyPdBemMy4u2Z6lq+9Pxt0NLeRfSNTh6QrKVK3sTHPEo5wZr3oLi5ofmJItBu\nusUbhhuNO7EeFIGyoTHbueZAISA4vokDLM4FYzn4uGhNYUHTVeaIAO2PU0EAD4mA\nj8RXZc0oSIqR4weSl9UtYcchaI3ps6Ak2WLoZKotWd3k/RfQ3Cgc6Y6zlAz2A3bU\nEF5ICcHFUxDiuzTx38BdxZL4uuuvQNdJL3AU22FpjYkCgYEA713sDehMBGYpz60u\nsh18yw8P1G82OFAjF4FxVevLGwdlmn/+xKLV3D0ACjdN4hcrV0LNoq/XZ4B1Lk6y\nzOmdcWlrc/t5PaORWx++WfHzgGan+96QBiSganOE7jOkej7ChI+Oi1JCdKIE2gXd\ncNwBBlYdBd3rMWhQRE1S8YcMpl8CgYEA3DNT1NhTcY3tT6Ao+6harf7fdv2nmZyS\nXcozR7BZ9a2BmuI7lDtn/OpLebsZG4bDj3KpDB8vcFIm0Sbpp5xzGtTHFSc/yiOl\nTOO/sZmPnQVon/FzP+VvoDRYQdQIXAu2hjaeGP06z4zPxp+VgYfVKgLChYkVMKz+\npfsGPHSVln0CgYEArnp85YpNVuuNUKdBIW4jF/TLqiLCl/u6CJk/Hs04iGQ06JCi\nCX1UfCwuykOTztjqq7mzIQIh9n0JbY7KAFnNfOzF+Y31yzteadjSrMeToiWyDwMl\nYoTyNYYtAGC+ZKk4qt3lnqKAdHnhJXce+fQz/wVoNG2V0bbiw1bFve6eBusCgYAO\nOdquo5MwgOTWAhjjuUqydwbk3xpW2EC0gn2xofkN4DnBUeBbgUMEmfZqVOYYWyqD\nN/sn51PfQ89yL7tksrzU/O4ntbNvUcI6J3SY+rzGfjT2MFkrxZzikr8o8ZPgrnkK\nTrkEEEgeZJB/2ouEJMxmvGroyaRu0p5ZBtCuUzHe2QKBgQC6R0h4o4Ktc2CZOPbA\nailwZd0gv1kXJtN6fELCG/QTCkW3/oieL7Y2VgJjcbTL96ZTQm/Wf8d0p6vnkUw0\ncaxTJwvbGdF5lucfgeOO/GK01VXgCTMsy8wsalQGIeNSgW6dOgIQp18IVHJdaeXy\nWobFr0peR8Wia2Fecow66T6oVw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "read-business-card@business-card-reader-146419.iam.gserviceaccount.com",
+  "client_id": "118369607776777693704",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/read-business-card%40business-card-reader-146419.iam.gserviceaccount.com"
+}
