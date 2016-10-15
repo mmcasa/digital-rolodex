@@ -4,7 +4,11 @@
 
 <h1>This is where you add new contacts!!</h1>
 
-
+<form method="POST" action="/users/1/contacts/img" enctype="multipart/form-data">
+  <input type="file" name="image">
+  <input type="submit">
+</form>
+<p></p>
 <%- include ../partials/forms/contactinfo.ejs %>
 
 <%- include ../partials/foot.ejs %>
