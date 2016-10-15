@@ -1,3 +1,7 @@
+var vision = require('@google-cloud/vision')({
+  projectId: 'business-card-reader-146419',
+  keyFilename: '../../../business-card-reader-04f33d15ecb2.json'
+});
 const express = require('express');
 const router = express.Router({
   mergeParams: true
@@ -19,6 +23,15 @@ router.get('/contacts/new', function (req, res, next) {
 router.post('/contacts', function (req, res, next) {
   // adds contact to contact table
   // takes info from company and adds it to the company table
+
+
+  vision.detectText('image.jpg', function(err, text, apiResponse) {
+    // text = [
+    //   'This was text found in the image'
+    // ]
+  });
+
+
   res.redirect('/users/:user/contacts/:contact');
 });
 
