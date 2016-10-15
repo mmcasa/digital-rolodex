@@ -61,7 +61,7 @@ describe('THE LOGIN PAGE TEST SUITE', () => {
                 const query = '';
 
                 chai.request(server)
-                    .post(`/login${query}`)
+                    .post(`/token${query}`)
                     .end((err, res) => {
                         done();
                     });
