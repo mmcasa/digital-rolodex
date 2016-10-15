@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 const server = require('../../src/server/app');
 
-// Tests for the user created tags pages
+// Tests for the login/signup page
 
 // tests that make sure whats supposed to be on the page is on the page
 describe('***CONTENT***', () => {
