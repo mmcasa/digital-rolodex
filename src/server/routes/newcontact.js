@@ -19,8 +19,11 @@ const upload = multer();
 router.get('/contacts/new', function (req, res, next) {
   // add contact form
   // will need to have a upload photo section that inserts to database then sends photo to google vision and retrieves data which then has to be returned to the form on the page correctly
+  knex('users').then(function (data) {
+    console.log(data);
+    res.render('contacts/new');
+  })
 
-  res.render('contacts/new');
 });
 
 router.post('/contacts', function (req, res, next) {
