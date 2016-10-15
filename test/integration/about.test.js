@@ -17,16 +17,16 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/about')
                 .end((err, res) => {
-                  done();
+                    done();
                 });
         });
 
         it('should have information about the service', (done) => {
-          chai.request(server)
-              .get('/about')
-              .end((err, res) => {
-                  done();
-              });
+            chai.request(server)
+                .get('/about')
+                .end((err, res) => {
+                    done();
+                });
         });
 
     });
@@ -37,11 +37,11 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
         describe('IF LOGGED IN', () => {
 
             it('should have a link to dashboard', (done) => {
-              chai.request(server)
-                  .get('/about')
-                  .end((err, res) => {
-                      done();
-                  });
+                chai.request(server)
+                    .get('/about')
+                    .end((err, res) => {
+                        done();
+                    });
             });
 
         });
@@ -49,19 +49,19 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
         describe('IF LOGGED OUT', () => {
 
             it('should have a link to login', (done) => {
-              chai.request(server)
-                  .get('/about')
-                  .end((err, res) => {
-                      done();
-                  });
+                chai.request(server)
+                    .get('/about')
+                    .end((err, res) => {
+                        done();
+                    });
             });
 
             it('should have a link to sign up', (done) => {
-              chai.request(server)
-                  .get('/about')
-                  .end((err, res) => {
-                      done();
-                  });
+                chai.request(server)
+                    .get('/about')
+                    .end((err, res) => {
+                        done();
+                    });
             });
 
         });
@@ -72,11 +72,11 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
     describe('***VIEWS***', () => {
 
         it('navbar at the top', (done) => {
-          chai.request(server)
-              .get('/about')
-              .end((err, res) => {
-                  done();
-              });
+            chai.request(server)
+                .get('/about')
+                .end((err, res) => {
+                    done();
+                });
         });
 
     });
@@ -84,13 +84,28 @@ describe('THE ABOUT PAGE TEST SUITE', () => {
     // test that only the right people are in the right places
     describe('***AUTH***', () => {
 
-      describe('IF LOGGED IN', () => {
+        describe('IF LOGGED IN', () => {
 
-      });
+            it('should be able to see page', (done) => {
+                chai.request(server)
+                    .get('/about')
+                    .end((err, res) => {
+                        done();
+                    });
+            });
+        });
 
-      describe('IF LOGGED OUT', () => {
+        describe('IF LOGGED OUT', () => {
 
-      });
+            it('should be able to see page', (done) => {
+                chai.request(server)
+                    .get('/about')
+                    .end((err, res) => {
+                        done();
+                    });
+            });
+
+        });
 
     });
 
