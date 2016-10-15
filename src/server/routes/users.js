@@ -15,8 +15,33 @@ router.get('/users/:user', function (req, res, next) {
   res.render('dashboard');
 });
 
+router.get('/users/:user/account', function (req, res, next) {
+  // user profile information
+  res.render('users/account');
+});
+
+router.get('/users/:user/edit', function (req, res, next) {
+  // edit user profile information
+  res.render('users/edit');
+});
+
+router.get('/users/:user/delete', function (req, res, next) {
+  // show delete confirmation page
+  res.render('users/delete');
+});
+
 //This is an authentication route
 router.post('/users', function (req, res, next) {
+  // add to users table
+  res.redirect('/users/:user');
+});
+
+router.patch('/users/:user', function (req, res, next) {
+  // add to users table
+  res.redirect('/users/:user');
+});
+
+router.delete('/users/:user', function (req, res, next) {
   // add to users table
   res.redirect('/users/:user');
 });
