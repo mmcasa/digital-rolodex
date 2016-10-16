@@ -6,6 +6,7 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
 const server = require('../../src/server/app');
+const agent = chai.request.agent(server);
 
 // Tests for the login page
 describe('THE SIGNUP PAGE TEST SUITE', () => {
