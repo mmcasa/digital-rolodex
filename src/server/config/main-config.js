@@ -12,6 +12,7 @@
   const ejs = require('ejs');
   const bcrypt = require('bcrypt-as-promised');
   const knex = require('../db/connection.js');
+  const methodOverride = require('method-override');
 
   // *** load environment variables *** //
   require('dotenv').config();

@@ -10,9 +10,41 @@ router.get('/login', function (req, res, next) {
   res.render('login');
 });
 
-router.post('/token', function (req, res, next) {
-  // start session
-  res.render('/users/:user');
+router.post('/token', (req, res, next) => {
+    console.log("I'm posting");
+    knex('users').where('email', req.body.email).first().then((user) => {
+            if (!user) {
+                //If there's no user
+                res.sendStatus(401);
+            }
+            //check password
+            return bcrypt.compare(req.body.password, user.hashpw);
+
+        })
+        .then(() => {
+            knex('users').where('email', req.body.email).first().then((user) => {
+
+                req.session.user = user;
+                console.log(req.session);
+                res.cookie('loggedIn', true);
+                res.render('index', {
+                  user: req.session.user
+                });
+            })
+        })
+        //if bad password
+        .catch(bcrypt.MISMATCH_ERROR, () => {
+            res.sendStatus(401);
+        })
 });
+
+router.delete('/token', (req, res) => {
+    console.log("i'm deleting");
+    req.session = null;
+    res.clearCookie('loggedIn');
+    res.clearCookie('reddit');
+    res.redirect('/login.html');
+});
+
 
 module.exports = router;
