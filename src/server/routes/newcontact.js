@@ -19,22 +19,29 @@ const bcrypt = require('bcrypt-as-promised');
 //this is the monster route it will need all the fancy forms and stuff so I made it its own route
 
 router.get('/contacts/new', function (req, res, next) {
+  let loggedInUser = req.session.user.id;
   // add contact form
   // will need to have a upload photo section that inserts to database then sends photo to google vision and retrieves data which then has to be returned to the form on the page correctly
-  knex('users').then(function (data) {
-    console.log(data);
-    res.send(data);
-    // res.render('contacts/new');
-  })
+  res.render('contacts/new', {user:loggedInUser});
 
 });
 
 router.post('/contacts', function (req, res, next) {
   // adds contact to contact table
   // takes info from company and adds it to the company table
-
-
-  res.redirect('/users/:user/contacts/:contact');
+  knex('contacts').insert({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    phone_num: req.body.phone_num,
+    linkedin_url: req.body.linkedin_url,
+    twitter_url: req.body.twitter_url,
+    job_title: req.body.job_title,
+    user_id: req.body.user_id,
+  }).then(function () {
+    res.send('new contact made')
+    // res.redirect('/users/:user/contacts/:contact');
+  });
 });
 
 router.post('/contacts/img', upload.single('image'), function (req, res, next) {
