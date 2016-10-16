@@ -6,6 +6,7 @@ const router = express.Router();
 // const [page]Controller = require('../controllers/[page]');
 
 router.get('/signup', function (req, res, next) {
+  
   // sign up form
   res.render('signup');
 });

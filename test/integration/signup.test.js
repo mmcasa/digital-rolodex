@@ -18,7 +18,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
-                  res.status.should.equal(200);
+                    res.status.should.equal(200);
                     done();
                 });
         });
@@ -27,7 +27,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
-                  res.text.should.include("</form>")
+                    res.text.should.include("</form>")
                     done();
                 });
 
@@ -37,8 +37,8 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
-                  res.text.should.include("name='first_name'");
-                  res.text.should.include("name='last_name'");
+                    res.text.should.include("name='first_name'");
+                    res.text.should.include("name='last_name'");
                     done();
                 });
 
@@ -48,7 +48,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
-                  res.text.should.include("name='email'");
+                    res.text.should.include("name='email'");
                     done();
                 });
 
@@ -58,8 +58,8 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
-                  res.text.should.include("<input type='password'");
-                  res.text.should.include("<input name='confirm_password'");
+                    res.text.should.include("<input type='password'");
+                    res.text.should.include("<input name='confirm_password'");
                     done();
                 });
 
@@ -74,13 +74,23 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
 
             it('signup page should redirect to dashboard', (done) => {
 
-                // create session
-
-                chai.request(server)
-                    .get('/signup')
-                    .end((err, res) => {
-                        done();
-                    });
+                agent
+                    .post('/users')
+                    .send({
+                        first_name: 'Test',
+                        last_name: 'User',
+                        email: 'test@email.com'
+                        password: 'password'
+                    })
+                    .then(function(res) {
+                        res.should.have.cookie(loggedIn);
+                        // The `agent` now has the sessionid cookie saved, and will send it
+                        // back to the server in the next request:
+                        return agent.get('/user/4d')
+                            .then(function(res) {
+                                expect(res).to.have.status(200);
+                            })
+                    })
 
             });
 
