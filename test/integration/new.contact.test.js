@@ -20,6 +20,12 @@ describe('THE NEW CONTACT PAGE', () => {
 
     describe('this is the new contact form', () => {
 
+      after(function (done) {
+        knex('contacts').where('email', 'apple@apple.com').del().then(function () {
+          done();
+        });
+      });
+
       it('should go to the new contact form page', (done) => {
           chai.request(server)
               .get('/users/1/contacts/new')

@@ -39,8 +39,7 @@ router.post('/contacts', function (req, res, next) {
     job_title: req.body.job_title,
     user_id: req.body.user_id,
   }).then(function () {
-    res.send('new contact made')
-    // res.redirect('/users/:user/contacts/:contact');
+    res.redirect('/users/:user/contacts/:contact');
   });
 });
 
