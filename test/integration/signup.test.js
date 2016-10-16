@@ -17,6 +17,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                  res.status.should.equal(200);
                     done();
                 });
         });
@@ -25,6 +26,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                  res.text.should.include("</form>")
                     done();
                 });
 
@@ -34,6 +36,8 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                  res.text.should.include("name='first_name'");
+                  res.text.should.include("name='last_name'");
                     done();
                 });
 
@@ -43,6 +47,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                  res.text.should.include("name='email'");
                     done();
                 });
 
@@ -52,6 +57,8 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                  res.text.should.include("<input type='password'");
+                  res.text.should.include("<input name='confirm_password'");
                     done();
                 });
 
