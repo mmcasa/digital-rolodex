@@ -29,17 +29,19 @@ router.get('/contacts/new', function (req, res, next) {
 router.post('/contacts', function (req, res, next) {
   // adds contact to contact table
   // takes info from company and adds it to the company table
-  knex('contacts').insert({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    phone_num: req.body.phone_num,
-    linkedin_url: req.body.linkedin_url,
-    twitter_url: req.body.twitter_url,
-    job_title: req.body.job_title,
-    user_id: req.body.user_id,
-  }).then(function () {
-    res.redirect('/users/:user/contacts/:contact');
+  knex('companies').insert({name: req.body.name, address: req.body.address}).then(function () {
+    knex('contacts').insert({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      phone_num: req.body.phone_num,
+      linkedin_url: req.body.linkedin_url,
+      twitter_url: req.body.twitter_url,
+      job_title: req.body.job_title,
+      user_id: req.body.user_id,
+    }).then(function () {
+      res.redirect('/users/:user/contacts/:contact');
+    });
   });
 });
 
