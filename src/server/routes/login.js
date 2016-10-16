@@ -18,7 +18,7 @@ router.post('/token', (req, res, next) => {
                 res.sendStatus(401);
             }
             //check password
-            return bcrypt.compare(req.body.password, user.hashpw);
+            return bcrypt.compare(req.body.password, user.password);
 
         })
         .then(() => {
@@ -26,10 +26,7 @@ router.post('/token', (req, res, next) => {
 
                 req.session.user = user;
                 console.log(req.session);
-                res.cookie('loggedIn', true);
-                res.render('index', {
-                  user: req.session.user
-                });
+                res.redirect(`users/${user.id}`)
             })
         })
         //if bad password
@@ -41,8 +38,6 @@ router.post('/token', (req, res, next) => {
 router.delete('/token', (req, res) => {
     console.log("i'm deleting");
     req.session = null;
-    res.clearCookie('loggedIn');
-    res.clearCookie('reddit');
     res.redirect('/login.html');
 });
 
