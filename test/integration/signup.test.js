@@ -78,14 +78,14 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
                     .send({
                         first_name: 'Test',
                         last_name: 'User',
-                        email: 'test@email.com'
+                        email: 'test@email.com',
                         password: 'password'
                     })
                     .then(function(res) {
-                        res.should.have.cookie(loggedIn);
+                        res.should.have.cookie('connect.sid');
                         // The `agent` now has the sessionid cookie saved, and will send it
                         // back to the server in the next request:
-                        return agent.get('/user/4d')
+                        return agent.get('/user/4')
                             .then(function(res) {
                                 expect(res).to.have.status(200);
                             })

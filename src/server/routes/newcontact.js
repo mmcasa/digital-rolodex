@@ -9,6 +9,8 @@ const router = express.Router({
 
 const multer  = require('multer');
 const upload = multer();
+const knex = require('../db/connection.js');
+const bcrypt = require('bcrypt-as-promised');
 
 
 // create a controller if you need functions in here

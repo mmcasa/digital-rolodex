@@ -7,6 +7,7 @@ chai.use(chaiHttp);
 
 const server = require('../../src/server/app');
 
+
 // Tests for the login page
 describe('THE LOGIN PAGE TEST SUITE', () => {
 
@@ -69,18 +70,20 @@ describe('THE LOGIN PAGE TEST SUITE', () => {
 
             });
 
-            it('when you log in should create session and cookie', (done) => {
-                const query = '';
-
-                chai.request(server)
-                    .post(`/login${query}`)
+            it.only('when you log in should create session and cookie', (done) => {
+                chai.request.agent(server)
+                    .post('/token')
+                    .send({
+                        email: 'user.1@gmail.com',
+                        password: 'password'
+                    })
                     .end((err, res) => {
+                        let session = res.res.socket._httpMessage._headers.cookie
+                        session.should.include('connect.sid');
                         done();
-                    });
-
-            });
-
-        });
+                    })
+            })
+        })
 
         describe('IF LOGGED OUT', () => {
 
