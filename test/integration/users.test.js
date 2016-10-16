@@ -48,7 +48,6 @@ describe('THE USER PAGES TEST SUITE', () => {
                     it('should show a toolbar for tags', (done) => {
                         chai.request(server)
                             .get('/users/1')
-                            .end((err, res) => {
                                 .end((err, res) => {
                                     res.text.should.include('CEO');
                                     res.text.should.include('Founder');

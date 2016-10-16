@@ -6,6 +6,7 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
 const server = require('../../src/server/app');
+const agent = chai.request.agent(server);
 
 // Tests for the login page
 describe('THE SIGNUP PAGE TEST SUITE', () => {
@@ -17,6 +18,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                    res.status.should.equal(200);
                     done();
                 });
         });
@@ -25,6 +27,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                    res.text.should.include("</form>")
                     done();
                 });
 
@@ -34,6 +37,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                    res.text.should.include("name='last_name'");
                     done();
                 });
 
@@ -43,6 +47,7 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                    res.text.should.include("name='email'");
                     done();
                 });
 
@@ -52,6 +57,8 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
             chai.request(server)
                 .get('/signup')
                 .end((err, res) => {
+                    res.text.should.include("<input type='password'");
+                    res.text.should.include("<input name='confirm_password'");
                     done();
                 });
 
@@ -66,13 +73,23 @@ describe('THE SIGNUP PAGE TEST SUITE', () => {
 
             it('signup page should redirect to dashboard', (done) => {
 
-                // create session
-
-                chai.request(server)
-                    .get('/signup')
-                    .end((err, res) => {
-                        done();
-                    });
+                agent
+                    .post('/users')
+                    .send({
+                        first_name: 'Test',
+                        last_name: 'User',
+                        email: 'test@email.com',
+                        password: 'password'
+                    })
+                    .then(function(res) {
+                        res.should.have.cookie('connect.sid');
+                        // The `agent` now has the sessionid cookie saved, and will send it
+                        // back to the server in the next request:
+                        return agent.get('/user/4')
+                            .then(function(res) {
+                                expect(res).to.have.status(200);
+                            })
+                    })
 
             });
 

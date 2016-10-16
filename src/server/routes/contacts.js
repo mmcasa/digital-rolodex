@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router({
   mergeParams: true
 });
+const knex = require('../db/connection.js');
+const bcrypt = require('bcrypt-as-promised');
 
 
 // create a controller if you need functions in here
